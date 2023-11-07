@@ -1,88 +1,15 @@
-/*** Navbar ***/
-
-.nav-item {
-  list-style: none;
+body{
+  background-color:rgb(214, 209, 209);
 }
 
-.nav-link {
-  padding: 10px;
-  background-color: #068DA9;
-  border-radius: 5px;
-  color: var(--ligtgray);
-  text-decoration: none;
+.top-navbar{
+  margin: 0 100px;
 }
-
-.nav-link:hover {
-
-  background-color: #EA1179;
+.categories{
+  margin: 0 0 0 100px;
 
 }
-
-
-.flex-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.flex-nav .nav-menu {
+.categories h2{
   text-align: center;
-  display: flex;
-  gap: 30px;
-
-}
-
-.flex-nav .logo {
-  width: 100px;
-  height: 100px;
-}
-
-.flex-nav .logo img {
-  width: 100%;
-}
-
-.sidebar-container {
-  width: calc(20% - 50px);
-  background-color: #066c80;
-  ;
-
-
-
-}
-
-.sidebar-menu {
-  height: 100%;
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  margin: 0;
-  width: calc(20% - 50px);
-
-
-}
-
-.sidebar-menu .sidebar-item {
-  list-style: none;
-  width: 100%;
-  background-color: #068DA9;
-
-  border-bottom: solid 2px;
-  padding: 20px 0;
-  font-weight: 700;
-  display: flex;
-
-}
-
-.sidebar-menu .sidebar-item .sidebar-link {
-  text-decoration: none;
-  font-size: 18px;
-  color: white;
-  margin-left: 40px;
-}
-
-.sidebar-menu .sidebar-item .sidebar-link:hover {
-
-  color: red;
-
+  padding-bottom: 10px;
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Input, Button } from 'reactstrap';
 
-const Product = () => {
+const Login = () => {
 
 const [username,setUsername] = useState(" ")
 const [password,setPassword] = useState(" ")
@@ -13,7 +13,7 @@ const [productDetails,setProductDetails ] = useState([])
 <div className='d-flex gap-3'>
 <div className='products w-25 d-flex flex-column gap-2'>
         <h3>
-            Product Details
+            Login Form
         </h3>
             <Input placeholder='Username' onChange={(e)=> setUsername(e.target.value)} />
             <Input placeholder='info@gmail.com' onChange={(e)=>setPassword(e.target.value)} />
@@ -22,7 +22,7 @@ const [productDetails,setProductDetails ] = useState([])
     <ul className='product-card d-flex flex-column gap-2 w-25 p-0'>
     <li className='list-unstyled  '>
       <h3>
-      Kullanıcı Bilgileri
+      User Informations
       </h3></li>
     {productDetails.map((item)=><li className='list-unstyled list-group-item '>{`User Name: ${item[0]}  Password: ${item[1]} `}</li>)}
 
@@ -34,7 +34,7 @@ const [productDetails,setProductDetails ] = useState([])
   )
 }
 
-export default Product
+export default Login
 
 
 

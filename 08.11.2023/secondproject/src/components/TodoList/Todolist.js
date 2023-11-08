@@ -1,21 +1,30 @@
 import React from 'react'
 import { Input, InputGroup,Button } from 'reactstrap';
+import { useState } from 'react';
+
 const Todolist = () => {
 
-let array = [
+
+const [name,setName] = useState()
+const [veriler,setarrayeEkle]= useState(
+  [
     {
-        id:1,
-        name: "Birinci"
+
+        sira: "Birinci"
     },
     {
-        id:2,
-        name: "İkinci"
+
+        sira: "İkinci"
     },
     {
-        id:3,
-        name: "Üçüncü"
+
+        sira: "Üçüncü"
     }
-]
+  ]
+)
+function ekle(){
+  setarrayeEkle([...veriler,{sira:name}])
+}
 
 
   return (
@@ -23,14 +32,20 @@ let array = [
 
 <div className='gorev-list flex-column w-25'>
     <h2>Görev Listesi</h2>
-<Input />
+    <div className='input'>
     <br />
   <InputGroup>
-    <Input placeholder='yeni görev ekle' />
-    <Button>
+    <Input onChange={(e)=>setName(e.target.value)} placeholder='Yeni Görev Ekle' />
+    <Button onClick={ekle}  >
     Ekle
     </Button>
   </InputGroup>
+    </div>
+    <ul className='d-flex flex-column gap-2 text-start mt-2 p-0'>
+      {veriler.map((item)=><li class="list-group-item">{item.sira}</li>)}
+    </ul>
+
+
 </div>
 
 

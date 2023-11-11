@@ -7,50 +7,53 @@ const CategoryCart = ({ productcard }) => {
 
     const [sepet, setSepet] = useState([]);
 
+    const [counter,setCounter]= useState(0);
+
+
+    const [gizle,setGizle] = useState(false);
+
+      
+
     const sepeteEkle = (item)=>{
+
+
+
         setSepet([...sepet,{
             productName: item.title,
             price: item.price
         }])
+        setCounter(counter+1)
     }
 
     return (
         <div>
-                 <Navigationbar sepet={sepet}  />
+                 <Navigationbar sepet={sepet} setSepet={setSepet} counter={counter} setCounter={setCounter} setGizle={setGizle}/>
 
-            <ul className='d-flex column-3 gap-3 p-0 flex-wrap w-75'>
-                {productcard.map((item) => <li className='list-unstyled'>
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src="holder.js/100px180" />
-                        <Card.Body>
-                            <Card.Title>{item.title}</Card.Title>
-                            <Card.Text className=' text-start' >
-                                {item.desc}
-                            </Card.Text>
-                            <Card.Text>
-                                Price: {item.price}TL
-                            </Card.Text>
-                            <Button onClick={()=>sepeteEkle(item) } variant="success">Sepete Ekle</Button>
-                            <Card.Text>
+                 {gizle === false &&
+                 
+                 <ul className='d-flex column-3 gap-3 p-0 flex-wrap w-75'>
+                 {productcard.map((item) => <li className='list-unstyled'>
+                     <Card style={{ width: '18rem' }}>
+                         <Card.Img variant="top" src={item.image} />
+                         <Card.Body>
+                             <Card.Title>{item.title}</Card.Title>
+                             <Card.Text className=' text-start' >
+                                 {item.desc}
+                             </Card.Text>
+                             <Card.Text className='d-flex gap-2 justify-content-center'>
+                                 Price: <h5>{item.price}TL</h5>
+                             </Card.Text>
+                             <Button onClick={()=>sepeteEkle(item) } variant="success">Sepete Ekle</Button>
 
-                             <ul>
-                                {sepet.map((i)=>
-                                
-                                <li>
-                                    {i.productName}
-                                </li>
+                         </Card.Body>
+                     </Card>
+                 </li>)}
+             </ul>
+                    
+                 
+                 }
 
-                                )}
-                            </ul> 
-                              
-
-
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                </li>)}
-            </ul>
-                   
+  
 
 
 

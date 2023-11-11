@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
-import { ModalBody } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
+import React, { useEffect, useState } from 'react'
+import { Button } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
 
-const PayModul = ({ sepet }) => {
+const PayModul = ({ sepet,setSepet,setCounter,setGoster,setGizle }) => {
 
     const [totalPrice, setTotalPrice] = useState(0)
+   
+    useEffect( ()=>{
+        hesapla()
+    },[sepet]);
 
     const hesapla = () => {
         let total = 0;
@@ -25,24 +28,22 @@ const PayModul = ({ sepet }) => {
         >
 
             <Modal.Dialog>
-                <Modal.Header closeButton>
+                <Modal.Header >
                     <Modal.Title>Shopping Cart</Modal.Title>
+                    <Button onClick={()=>{setGoster(false); setGizle(false)}}  variant="outline-danger">X</Button>
                 </Modal.Header>
-                {sepet.map((item) => <div>
+                {sepet.map((item,index) => <div>
 
 
-                    <Modal.Body className='d-flex gap-3 align-items-center'>
-                        <h5>{item.productName}</h5>
+                    <Modal.Body className='d-flex justify-content-around align-items-center'>
+                        <h5>{index+1}. Product: {item.productName}</h5>
                         <h5>Price: {item.price}TL</h5>
                     </Modal.Body>
                 </div>)}
-                <ModalBody className='d-flex gap-3 align-items-center'>
-                    <h5></h5>
 
-                </ModalBody>
-                <Modal.Footer className='d-flex gap-3 jusftify-content-between align-items-center'>
-                    <h5>Total Price: {totalPrice} </h5>
-                    <Button onClick={hesapla} variant="primary">Calculate Total Price</Button>
+                <Modal.Footer className='d-flex gap-3 jusftify-content-center align-items-center'>
+                <Button onClick={()=>{setSepet([]) ;setCounter(0)}}  variant="outline-dark">Sepeti Temizle</Button>
+                    <h4>Total Price: {totalPrice}TL </h4>
                 </Modal.Footer>
             </Modal.Dialog>
 

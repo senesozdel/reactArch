@@ -4,10 +4,9 @@ import PayModul from '../PayModul/PayModul';
 
 
 
-const Navigationbar = ({sepet}) => {
+const Navigationbar = ({sepet,counter,setSepet,setCounter,setGizle}) => {
 
 const [goster,setGoster]= useState(false)
-
 
 
     
@@ -19,14 +18,18 @@ const [goster,setGoster]= useState(false)
         <div className='navbar-item'><h4>Products</h4></div>
         <div className='navbar-item'><h4>Categories</h4></div>
         <div className='navbar-item'><h4>Services</h4></div>
-        <div className='navbar-item'>
-          <Button onClick={()=>setGoster(true)}  >Shopping Cart</Button>
+        <div className='navbar-item d-flex gap-2'>
+          <Button onClick={()=>{setGoster(true); setGizle(true)}}  >Shopping Cart</Button>
+          {counter>0 && 
+          <div className='rounded-circle d-flex align-items-center justify-content-center bg-success text-white px-3'>{counter }</div>
+          }
+          
         </div>
       </div>
     </nav>
     <div>
       {
-       goster=== true && <PayModul sepet={sepet}  />
+       goster=== true && <PayModul sepet={sepet} setSepet = {setSepet} setCounter={setCounter} setGoster={setGoster} setGizle={setGizle}/>
       }
 
 

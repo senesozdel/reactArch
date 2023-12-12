@@ -57,15 +57,6 @@ const PayModul = ({ sepet,setSepet,setCounter,setGoster,setGizle,bakiye,setBakiy
  <Button className='rounded-2' variant='outline-success' onClick={()=> {setSepet([]); satinAl(); setCounter(0); }}>Satın Al</Button>   :
  <div className='navbar-item bg-danger align-items-center d-flex rounded-2'><h6 className='px-2 text-white'> Yetersiz Bakiye</h6></div>
  }
-       
-
-               
-                        
-            
-           
-                
-
-
                    </div>
                 }
 

@@ -33,6 +33,9 @@ class Header extends Component {
                             <div className="col-12 col-md-3 fh5co_padding_menu">
                                 <img src="https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg" alt="img" className="fh5co_logo_width" />
                             </div>
+                            <div className="col-12 col-md-3 fh5co_padding_menu">
+                                {this.basket}
+                            </div>
                             <div className="col-12 col-md-9 align-self-center fh5co_mediya_right">
                                 <Categories
                                     Kategoriler={this.state.kategorilerData}

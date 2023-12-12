@@ -42,8 +42,8 @@ const[newProDesc,setNewProDesc] = useState()
 
                     <ul className='d-flex column-3 gap-3 p-0 flex-wrap  '>
                         {productcard.map((item) => <li className='list-unstyled'>
-                            <Card style={{ width: '18rem' }} className='bg-light'>
-                                <Card.Img variant="top" src={item.image} />
+                            <Card style={{ width: '18rem'}} className='bg-light'>
+                                <Card.Img className='' variant="top" src={item.image} />
                                 <Card.Body>
                                     <Card.Title>{item.title}</Card.Title>
                                     <Card.Text className=' text-start' >

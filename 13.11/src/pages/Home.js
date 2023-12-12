@@ -7,7 +7,7 @@ const Home = () => {
     const[helel,setApi] = useState([])
 
    useEffect=(()=> {axios.get('https://jsonplaceholder.typicode.com/users').then((response)=>{ setApi(response.data)})},[] )
-console.log(helel)
+console.log("https://jsonplaceholder.typicode.com/users")
   return (
     <div>
 

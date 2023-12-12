@@ -11,6 +11,7 @@ class App extends Component {
             selectedCategoryId: null,
             selectedBlog: null,
             showModal: false,
+            basket:[],
         };
     }
     handleCategorySelect = (selectedCategoryId) => {
@@ -23,14 +24,17 @@ class App extends Component {
     closeModal = () => {
         this.setState({selectedBlog: null, showModal: false});
     }
+    sepeteEkle = ()=>{
+        this.setState({})
+    }
 
     render() {
         return (
             <div>
-                <Header onCategorySelect={this.handleCategorySelect}/>
+                <Header onCategorySelect={this.handleCategorySelect} basket={this.basket}/>
                 <Headline onBlogClick={this.openModal}/>
                 <News selectedCategory={this.state.selectedCategoryId} onBlogClick={this.openModal} showModal={this.state.showModal} selectedBlog={this.state.selectedBlog}
-                      onClose={this.closeModal}/>
+                      onClose={this.closeModal} basket={this.basket} setBasket={this.sepeteEkle}/>
             </div>
         );
     }

@@ -11,6 +11,7 @@ class News extends Component {
             blogs: [],
             error: null,
 
+
         };
     }
 
@@ -48,7 +49,7 @@ class News extends Component {
 
 
     render() {
-        const {blogs, error} = this.state;
+        const {blogs, error,basket} = this.state;
 
         if (error) {
             return <div>{error}</div>;
@@ -85,7 +86,7 @@ class News extends Component {
                                     <div className="fh5co_consectetur">
                                         <i className="fa fa-clock-o"></i> {blog.date}
                                     </div>
-                                    <button className='rounded-1 mt-1 bg-success text-white'>Satın AL</button>
+                                    <button className='rounded-1 mt-1 bg-success text-white' onClick={()=>this.sepeteEkle(blog.id)}>Satın AL</button>
 
                                     <div className="fh5co_consectetur">
                                         {blog.tag.map((tag, index) => (
